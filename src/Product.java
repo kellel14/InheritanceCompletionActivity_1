@@ -1,18 +1,20 @@
 //Debug this class/code to make it run
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 
 public class Product {
 
     private String code;
     private String description;
-    private String price;
+    private double price;
 
-    //protected static variable
-    protected static int count = 0;
+//    //protected static variable
+//    protected static int count = 0;
     //created constructor
     public Product(){
         code ="";
         description = "";
-        price = 0;
+        price = 0.0;
 
     }
 
@@ -28,14 +30,35 @@ public class Product {
 
     private String getFormattedPrice(){
         // Use the NumberFormat class to format the price to 2 decimal places
-
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setMaximumFractionDigits(2);
+        nf.setMaximumFractionDigits(2);
+        nf.setRoundingMode(RoundingMode.HALF_UP);
+        return nf.format(price);
     }
 
-    // Create public access for the count varibale
-    public static  int getCount(){
-        return count;
+
+    public String getCode() {
+        return code;
     }
 
+    public void setCode(String code) {
+        this.code = code;
+    }
 
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }

@@ -4,10 +4,25 @@ public class Book extends Product {
 
     private String author;
     private int pages;
-// created constructor
-    public Book(){
+
+    public String getAuthor() {
+        return author;
     }
 
-    // add an overloaded constructor to for object to call
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+
+    // created constructor
+    public Book(){
+    }
 
 }
